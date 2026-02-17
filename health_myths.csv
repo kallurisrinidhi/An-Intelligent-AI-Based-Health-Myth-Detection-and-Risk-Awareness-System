@@ -1,0 +1,101 @@
+belief_text,label,explanation,risk
+Drinking hot water cures COVID-19,0,Hot water cannot kill viruses inside the body,High
+Vaccines prevent measles,1,Vaccines are scientifically proven to prevent measles,Low
+Turmeric cures cancer,0,Turmeric has benefits but cannot cure cancer,High
+Regular exercise improves heart health,1,Exercise strengthens heart muscles and circulation,Low
+Antibiotics cure viral infections,0,Antibiotics work only against bacteria,High
+Wearing masks reduces virus spread,1,Masks block respiratory droplets,Low
+Skipping meals helps weight loss,0,Skipping meals can slow metabolism,Medium
+Smoking causes lung cancer,1,Smoking is a major cause of lung cancer,Low
+Drinking alcohol kills germs in the body,0,Alcohol does not disinfect internal organs,High
+Handwashing prevents infections,1,Handwashing removes germs effectively,Low
+Cold weather causes cold,0,Viruses cause cold not temperature,Medium
+Fruits improve immunity,1,Fruits provide essential vitamins,Low
+Diabetes is caused by eating sugar alone,0,Diabetes has multiple genetic and lifestyle factors,Medium
+Yoga reduces stress,1,Yoga helps regulate stress hormones,Low
+Herbal medicines have no side effects,0,Herbal products can also cause side effects,High
+Sleep improves mental health,1,Good sleep supports brain function,Low
+Vaccines cause infertility,0,No scientific evidence supports this claim,High
+Drinking water helps digestion,1,Water aids digestive processes,Low
+Cracking knuckles causes arthritis,0,No strong evidence links this to arthritis,Medium
+Excess salt increases blood pressure,1,High salt intake raises blood pressure,Low
+Detox diets cleanse the body,0,Liver and kidneys already detox the body,Medium
+Balanced diet improves overall health,1,Balanced nutrition supports body functions,Low
+Sitting too close to TV damages eyes,0,It may cause strain but not permanent damage,Medium
+Walking daily improves fitness,1,Walking improves cardiovascular health,Low
+Mobile phones cause brain cancer,0,No conclusive evidence proves this,Medium
+Vaccination reduces disease spread,1,Vaccines create herd immunity,Low
+Honey cures diabetes,0,Honey still increases blood sugar,High
+Deep breathing improves oxygen intake,1,Proper breathing improves lung efficiency,Low
+Eating late at night causes obesity,0,Obesity depends on total calorie intake,Medium
+Stress affects physical health,1,Stress impacts heart and immune system,Low
+Drinking milk strengthens bones,1,Milk provides calcium and vitamin D,Low
+Garlic cures infections,0,Garlic cannot cure infections medically,Medium
+Obesity increases heart disease risk,1,Obesity strains the heart,Low
+Starving is good for detox,0,Starvation harms metabolism,High
+Meditation improves focus,1,Meditation enhances concentration,Low
+Supplements replace healthy food,0,Supplements cannot replace whole foods,Medium
+High sugar intake causes tooth decay,1,Sugar promotes bacterial growth,Low
+Drinking lemon water cures diseases,0,Lemon water does not cure diseases,Medium
+Regular checkups detect diseases early,1,Early screening improves treatment success,Low
+Oil pulling removes toxins,0,No scientific proof supports this claim,Medium
+Smoking hookah is safer than cigarettes,0,Hookah smoke is also harmful,High
+Walking after meals aids digestion,1,Light walking supports digestion,Low
+Skipping vaccines improves immunity,0,Vaccines train immunity safely,High
+Proper hydration improves skin health,1,Hydration supports skin cells,Low
+Fever always means infection,0,Fever can have multiple causes,Medium
+Balanced sleep cycle improves immunity,1,Sleep strengthens immune response,Low
+Drinking soda helps digestion,0,Soda can irritate the stomach,Medium
+Exercise helps control diabetes,1,Exercise improves insulin sensitivity,Low
+Applying toothpaste cures pimples,0,Toothpaste can damage skin,Medium
+Sunlight helps vitamin D production,1,Sunlight triggers vitamin D synthesis,Low
+Painkillers cure diseases,0,Painkillers only reduce pain,High
+Healthy diet reduces disease risk,1,Nutrition lowers chronic disease risk,Low
+Fasting cures chronic illness,0,Fasting alone cannot cure illness,High
+Proper posture prevents back pain,1,Good posture reduces spinal stress,Low
+Cold drinks cause sore throat,0,Viruses cause sore throat,Medium
+Avoiding junk food improves health,1,Junk food increases health risks,Low
+Coconut oil cures heart disease,0,No clinical proof supports this,High
+Stress management improves wellbeing,1,Managing stress improves health,Low
+Skipping breakfast causes ulcers,0,Ulcers are mainly caused by bacteria,Medium
+Brushing twice daily prevents cavities,1,Brushing removes plaque,Low
+Energy drinks improve health,0,Energy drinks increase health risks,High
+Fresh air improves mental health,1,Fresh air boosts mood,Low
+Eating fat causes heart disease,0,Type of fat matters not all fats,Medium
+Walking reduces stress,1,Physical activity releases endorphins,Low
+Antibiotics help in cold,0,Cold is viral not bacterial,High
+Healthy lifestyle increases lifespan,1,Lifestyle impacts longevity,Low
+Drinking vinegar cures diabetes,0,Vinegar cannot cure diabetes,High
+Regular stretching improves flexibility,1,Stretching maintains muscle health,Low
+Multivitamins prevent all diseases,0,No supplement prevents all diseases,High
+Laughter reduces stress,1,Laughter releases stress hormones,Low
+Sweating removes toxins,0,Sweat regulates temperature only,Medium
+Balanced meals improve metabolism,1,Regular meals stabilize metabolism,Low
+Smoking relieves stress,0,Smoking increases stress long term,High
+Drinking enough water aids kidneys,1,Hydration supports kidney function,Low
+Skipping sleep boosts productivity,0,Lack of sleep reduces productivity,High
+Regular exercise strengthens immunity,1,Exercise improves immune response,Low
+Applying oil cures dandruff,0,Oil may worsen dandruff,Medium
+Eating vegetables improves digestion,1,Fiber aids digestion,Low
+Home remedies cure serious diseases,0,Serious diseases need medical care,High
+Proper hygiene prevents infections,1,Hygiene blocks pathogen spread,Low
+Cold showers cure depression,0,Depression needs proper treatment,High
+Physical activity improves mood,1,Activity releases endorphins,Low
+Using phone in dark damages eyes,0,It causes strain not permanent damage,Medium
+Balanced lifestyle improves health,1,Healthy habits support wellbeing,Low
+Drinking tea cures headaches,0,Tea may relieve but not cure causes,Medium
+Adequate sleep improves memory,1,Sleep strengthens memory,Low
+Vaccines weaken immunity,0,Vaccines strengthen immunity,High
+Healthy food reduces obesity,1,Nutritious food controls weight,Low
+Skipping water helps weight loss,0,Dehydration harms the body,High
+Walking improves blood circulation,1,Movement enhances circulation,Low
+Herbal drinks cure kidney failure,0,Kidney failure requires medical care,High
+Healthy habits prevent lifestyle diseases,1,Prevention reduces disease risk,Low
+Stress causes cancer,0,Stress alone does not cause cancer,Medium
+Positive mindset improves recovery,1,Mental health supports recovery,Low
+Applying lemon cures acne,0,Lemon can irritate skin,Medium
+Balanced diet improves immunity,1,Nutrition strengthens immune system,Low
+Skipping medicines improves healing,0,Skipping medicines delays recovery,High
+Regular health checkups save lives,1,Early detection improves survival,Low
+Homeopathy cures all diseases,0,No evidence supports universal cure,High
+Healthy lifestyle prevents chronic illness,1,Lifestyle choices reduce chronic diseases,Low

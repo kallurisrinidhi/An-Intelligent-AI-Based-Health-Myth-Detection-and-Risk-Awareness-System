@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI-Based Health Myth Detection & Risk Awareness System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="app-wrapper">
+
+    <!-- Header -->
+    <div class="header">
+    <h1>🧠 An Intelligent AI-Based Health Myth Detection and Risk Awareness System</h1>
+    <p>AI-Driven Analysis of Medical Beliefs with Risk & Awareness Insights</p>
+
+    <a href="/analytics">
+        <button class="analytics-btn">📊 Analytics Dashboard</button>
+    </a>
+</div>
+
+
+    <!-- Input Card -->
+    <div class="card input-card">
+        <form method="POST">
+            <input type="text" name="belief"
+                   placeholder="Type a health belief to analyze..."
+                   required>
+            <button type="submit" class="analyze-btn">Analyze</button>
+        </form>
+    </div>
+
+    <!-- Result Card -->
+    {% if result %}
+    <div class="card result-card {{ color }}">
+        <h2>
+            {% if result == "MYTH" %} ❌ MYTH
+            {% elif result == "FACT" %} ✅ FACT
+            {% else %} ⚠ UNCERTAIN {% endif %}
+        </h2>
+
+        <div class="grid">
+            <div><b>Confidence</b><br>{{ confidence }}%</div>
+            <div><b>Similarity</b><br>{{ similarity_score }}%</div>
+            <div><b>Risk Score</b><br>{{ risk_score }}/100</div>
+            <div><b>Risk Level</b><br>{{ risk }}</div>
+        </div>
+
+        <p class="explanation">
+            <b>Explanation:</b><br>
+            {{ explanation }}
+        </p>
+
+        <p class="impact">
+            <b>Impact:</b> {{ impact }}
+        </p>
+
+        <!-- Feedback -->
+        <form method="POST" action="/feedback" class="feedback-form">
+            <input type="hidden" name="belief" value="{{ request.form.belief }}">
+            <input type="hidden" name="ai_result" value="{{ result }}">
+            <input type="hidden" name="confidence" value="{{ confidence }}">
+
+            <button name="user_feedback" value="Correct" class="feedback good">
+                👍 Correct
+            </button>
+            <button name="user_feedback" value="Incorrect" class="feedback bad">
+                👎 Incorrect
+            </button>
+        </form>
+
+        {% if advisory %}
+        <div class="advisory">
+            ⚠ {{ advisory }}
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

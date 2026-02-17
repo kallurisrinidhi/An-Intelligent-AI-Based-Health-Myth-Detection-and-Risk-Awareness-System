@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.app-wrapper {
+    width: 75%;
+    max-width: 900px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.header p {
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.analytics-btn {
+    background: #1f7a5a;
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Input */
+.input-card form {
+    display: flex;
+    gap: 10px;
+}
+
+.input-card input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+}
+
+.analyze-btn {
+    background: #1f7a5a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Result card colors */
+.result-card.fact { border-left: 6px solid #22c55e; }
+.result-card.myth { border-left: 6px solid #ef4444; }
+.result-card.uncertain { border-left: 6px solid #facc15; }
+
+.result-card h2 {
+    margin-top: 0;
+}
+
+/* Grid info */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.grid div {
+    background: rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Text blocks */
+.explanation {
+    margin-top: 10px;
+}
+
+.impact {
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Feedback */
+.feedback-form {
+    margin-top: 15px;
+}
+
+.feedback {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.feedback.good {
+    background: #22c55e;
+    color: black;
+}
+
+.feedback.bad {
+    background: #ef4444;
+    color: white;
+}
+
+/* Advisory */
+.advisory {
+    margin-top: 12px;
+    background: rgba(255, 193, 7, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+}
