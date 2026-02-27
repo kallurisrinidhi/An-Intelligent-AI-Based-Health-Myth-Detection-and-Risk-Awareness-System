@@ -1,83 +1,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AI-Based Health Myth Detection & Risk Awareness System</title>
+<meta charset="UTF-8">
+<title>TruthGuardAI</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#0f2027);
+background-size:400% 400%;
+animation:gradient 12s ease infinite;
+color:white;
+text-align:center;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+}
+
+.search-container{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:10px;
+}
+
+input{
+padding:12px;
+width:500px;
+border-radius:8px;
+border:none;
+}
+
+.verify-btn{
+background:#34ff9c;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.fact{color:#66ff99}
+.myth{color:#ff6b6b}
+.uncertain{color:#ffd166}
+
+button{
+margin:5px;
+padding:8px 15px;
+cursor:pointer;
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="app-wrapper">
-
-    <!-- Header -->
-    <div class="header">
-    <h1>🧠 An Intelligent AI-Based Health Myth Detection and Risk Awareness System</h1>
-    <p>AI-Driven Analysis of Medical Beliefs with Risk & Awareness Insights</p>
-
-    <a href="/analytics">
-        <button class="analytics-btn">📊 Analytics Dashboard</button>
-    </a>
+<div class="navbar">
+<div>TruthGuardAI</div>
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/library">Library</a>
+<a href="/about">About AI</a>
+<a href="/analytics">Analytics</a>
+<a href="/admin">Admin</a>
+</div>
 </div>
 
+<h1>Separating Fact From Fiction</h1>
 
-    <!-- Input Card -->
-    <div class="card input-card">
-        <form method="POST">
-            <input type="text" name="belief"
-                   placeholder="Type a health belief to analyze..."
-                   required>
-            <button type="submit" class="analyze-btn">Analyze</button>
-        </form>
-    </div>
+<form id="aiForm" class="search-container">
+<input type="text" name="belief" placeholder="Ask health myth..." required>
+<button class="verify-btn">Verify</button>
+</form>
 
-    <!-- Result Card -->
-    {% if result %}
-    <div class="card result-card {{ color }}">
-        <h2>
-            {% if result == "MYTH" %} ❌ MYTH
-            {% elif result == "FACT" %} ✅ FACT
-            {% else %} ⚠ UNCERTAIN {% endif %}
-        </h2>
+<div id="result"></div>
 
-        <div class="grid">
-            <div><b>Confidence</b><br>{{ confidence }}%</div>
-            <div><b>Similarity</b><br>{{ similarity_score }}%</div>
-            <div><b>Risk Score</b><br>{{ risk_score }}/100</div>
-            <div><b>Risk Level</b><br>{{ risk }}</div>
-        </div>
+<script>
 
-        <p class="explanation">
-            <b>Explanation:</b><br>
-            {{ explanation }}
-        </p>
+document.getElementById("aiForm").onsubmit = async function(e){
+e.preventDefault();
 
-        <p class="impact">
-            <b>Impact:</b> {{ impact }}
-        </p>
+const formData = new FormData(this);
 
-        <!-- Feedback -->
-        <form method="POST" action="/feedback" class="feedback-form">
-            <input type="hidden" name="belief" value="{{ request.form.belief }}">
-            <input type="hidden" name="ai_result" value="{{ result }}">
-            <input type="hidden" name="confidence" value="{{ confidence }}">
+const res = await fetch("/analyze",{
+method:"POST",
+body:formData
+});
 
-            <button name="user_feedback" value="Correct" class="feedback good">
-                👍 Correct
-            </button>
-            <button name="user_feedback" value="Incorrect" class="feedback bad">
-                👎 Incorrect
-            </button>
-        </form>
+const data = await res.json();
 
-        {% if advisory %}
-        <div class="advisory">
-            ⚠ {{ advisory }}
-        </div>
-        {% endif %}
-    </div>
-    {% endif %}
+document.getElementById("result").innerHTML =
+`
+<h2 class="${data.color}">${data.result}</h2>
+<p>Confidence: ${data.confidence}%</p>
+<p>Risk Score: ${data.risk_score}</p>
+<p>${data.explanation}</p>
 
+<div>
+<button onclick="sendFeedback('Correct')">👍 Correct</button>
+<button onclick="sendFeedback('Incorrect')">👎 Incorrect</button>
 </div>
+`;
+}
+
+function sendFeedback(type){
+
+fetch("/feedback",{
+method:"POST",
+headers:{'Content-Type':'application/x-www-form-urlencoded'},
+body:new URLSearchParams({
+belief:document.querySelector("input[name='belief']").value,
+ai_result:document.querySelector("#result h2").innerText,
+confidence:document.querySelector("#result p").innerText.replace("Confidence: ","").replace("%",""),
+feedback:type
+})
+})
+.then(()=>alert("Feedback Saved"));
+}
+
+</script>
 
 </body>
 </html>

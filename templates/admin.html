@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+<div>TruthGuardAI Admin</div>
+<a href="/">Home</a>
+</nav>
+
+<div class="hero">
+
+<h1>AI Control Panel</h1>
+
+<div class="result">
+<p>Total Queries Processed: {{ total_queries }}</p>
+<p>Model Version: v3.0</p>
+<p>Status: 🟢 LIVE</p>
+</div>
+
+</div>
+
+</body>
+</html>

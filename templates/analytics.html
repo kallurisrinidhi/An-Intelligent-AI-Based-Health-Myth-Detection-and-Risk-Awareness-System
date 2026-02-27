@@ -1,28 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AI Health Engine – Analytics</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>AI Analytics Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial;
+            background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+            color:white;
+        }
+
+        .title{
+            text-align:center;
+            padding:30px;
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .container{
+            display:flex;
+            justify-content:center;
+            gap:40px;
+            padding:40px;
+        }
+
+        .card{
+            width:500px;
+            background:rgba(255,255,255,0.05);
+            backdrop-filter:blur(15px);
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0 0 25px rgba(0,255,200,0.2);
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>📊 AI Health Engine – Analytics Dashboard</h1>
+<div class="title">AI Analytics Dashboard</div>
 
-    <div class="result-box fact">
-        <p><b>Total Beliefs Analyzed:</b> {{ total_queries }}</p>
-        <p><b>MYTH Count:</b> {{ myth_count }}</p>
-        <p><b>FACT Count:</b> {{ fact_count }}</p>
-        <p><b>Average Confidence:</b> {{ avg_confidence }}%</p>
-        <p><b>User Feedback – Correct:</b> {{ correct_count }}</p>
-        <p><b>User Feedback – Incorrect:</b> {{ incorrect_count }}</p>
+<div class="container">
+
+    <div class="card">
+        <canvas id="decisionChart"></canvas>
     </div>
 
-    <br>
-    <a href="/" style="text-decoration:none;">
-        <button>⬅ Back to Analyzer</button>
-    </a>
+    <div class="card">
+        <canvas id="feedbackChart"></canvas>
+    </div>
+
 </div>
+
+<script>
+/* ================== DATA FROM FLASK ================== */
+
+const mythCount = {{ myth_count }};
+const factCount = {{ fact_count }};
+const correctCount = {{ correct_count }};
+const incorrectCount = {{ incorrect_count }};
+
+/* ================== CHART 1 ================== */
+
+new Chart(document.getElementById('decisionChart'),{
+    type:'bar',
+    data:{
+        labels:['MYTH','FACT'],
+        datasets:[{
+            label:'AI Decisions',
+            data:[mythCount,factCount]
+        }]
+    }
+});
+
+/* ================== CHART 2 ================== */
+
+new Chart(document.getElementById('feedbackChart'),{
+    type:'doughnut',
+    data:{
+        labels:['Correct','Incorrect'],
+        datasets:[{
+            data:[correctCount,incorrectCount]
+        }]
+    }
+});
+</script>
 
 </body>
 </html>
